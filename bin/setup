@@ -1,3 +1,4 @@
 #!/bin/bash -e
 
+mkdir -p $HOME/.drush
 exit 0
