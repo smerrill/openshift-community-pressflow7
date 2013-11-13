@@ -18,5 +18,5 @@ if ($_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'] || TRUE) {
 // @TODO: Set up Redis.
 // @TODO: Set up Varnish.
 
-echo "OPENSHIFT_PRESSFLOW_TEST=ohyeah";
-printf("PRESSFLOW_SETTINGS=%s", json_encode($env_info));
+echo "OPENSHIFT_PRESSFLOW7_TEST=ohyeah\n";
+printf("PRESSFLOW_SETTINGS=%s\n", json_encode($env_info));
