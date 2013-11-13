@@ -1,0 +1,17 @@
+---
+Name: pressflow7
+Cartridge-Short-Name: PRESSFLOW7
+Architecture: noarch
+Display-Name: Pressflow 7 Settings Helper
+Description: Utility
+Version: '0.0.1'
+Cartridge-Version: 0.0.1
+Cartridge-Vendor: phase2
+License: BSD
+Categories:
+- embedded
+Provides:
+- pressflow7
+Scaling:
+  Min: 1
+  Max: 1
