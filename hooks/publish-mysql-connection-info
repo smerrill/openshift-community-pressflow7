@@ -19,3 +19,4 @@ if ($_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'] || TRUE) {
 // @TODO: Set up Varnish.
 
 printf("PRESSFLOW_SETTINGS=%s", json_encode($env_info));
+echo "YO=dawg";
