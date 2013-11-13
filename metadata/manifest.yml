@@ -17,4 +17,4 @@ Scaling:
   Max: 1
 Subscribes:
   set-mysql-connection-info:
-    Type: "ENV:NET_TCP:db:connection-info"
+    Type: ENV:NET_TCP:db:connection-info
