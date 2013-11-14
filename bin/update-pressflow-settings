@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+<?php
+
+$current_value = $_SERVER['PRESSFLOW_SETTINGS'];
+
+$env_info = array();
+
+if ($_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'] || TRUE) {
+  $env_info['databases']['default']['default'] = array(
+    'driver' => 'mysql',
+    'database' => $_SERVER['OPENSHIFT_APP_NAME'],
+    'username' => $_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'],
+    'password' => $_SERVER['OPENSHIFT_MYSQL_DB_PASSWORD'],
+    'host' => $_SERVER['OPENSHIFT_MYSQL_DB_HOST'],
+    'prefix' => '',
+  );
+}
+
+// @TODO: Set up memcached.
+// @TODO: Set up Redis.
+// @TODO: Set up Varnish.
+
+$rendered_env = json_encode($env_info);
+
+if ($rendered_env == $env_info) {
+  exit(0);
+}
+
+$env_path = sprintf("%s/env/PRESSFLOW_SETTINGS", $_SERVER['OPENSHIFT_PRESSFLOW7_DIR']);
+file_put_contents($env_path, $rendered_env);
+
+# Start and stop the PHP cartridge.
+exec("ctl_app stop php");
+exec("ctl_app start php");
