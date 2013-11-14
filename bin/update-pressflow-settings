@@ -22,7 +22,7 @@ if ($_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'] || TRUE) {
 
 $rendered_env = json_encode($env_info);
 
-if ($rendered_env == $env_info) {
+if ($rendered_env == $current_value) {
   exit(0);
 }
 
