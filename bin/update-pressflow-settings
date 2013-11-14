@@ -30,5 +30,5 @@ $env_path = sprintf("%s/env/PRESSFLOW_SETTINGS", $_SERVER['OPENSHIFT_PRESSFLOW7_
 file_put_contents($env_path, $rendered_env);
 
 # Start and stop the PHP cartridge.
-exec("ctl_app stop php");
-exec("ctl_app start php");
+exec("gear stop php");
+exec("gear start php");
