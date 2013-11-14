@@ -3,7 +3,7 @@
 
 $current_value = $_SERVER['PRESSFLOW_SETTINGS'];
 
-$env_info = array();
+$env_info = array('conf' => array('pressflow_smart_start' => 1));
 
 if ($_SERVER['OPENSHIFT_MYSQL_DB_USERNAME'] || TRUE) {
   $env_info['databases']['default']['default'] = array(
