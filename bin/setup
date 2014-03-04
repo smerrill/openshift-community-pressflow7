@@ -1,4 +1,5 @@
 #!/bin/bash -e
 
 mkdir -p $HOME/.drush
+mkdir -p $PHP_INI_SCAN_DIR
 exit 0

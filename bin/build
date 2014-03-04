@@ -1,0 +1,14 @@
+#!/bin/bash
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+# Symlink all PHP .ini files into the Pressflow 7 directory.
+ln -sfv /etc/php.d/* $PHP_INI_SCAN_DIR
+
+# Also create one more file to hold the necessary APC memory.
+
+[[ -z $OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE ]] && OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE="160M"
+echo $OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE > $PHP_INI_SCAN_DIR/zzz_apc.ini
+
+exit 0
+
