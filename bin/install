@@ -8,7 +8,7 @@ ln -sfv /etc/php.d/* $PHP_INI_SCAN_DIR
 # Also create one more file to hold the necessary APC memory.
 
 [[ -z $OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE ]] && OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE="160M"
-echo $OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE > $PHP_INI_SCAN_DIR/zzz_apc.ini
+echo "apc.shm_size=$OPENSHIFT_PRESSFLOW7_APC_SHM_SIZE" > $PHP_INI_SCAN_DIR/zzz_apc.ini
 
 exit 0
 
