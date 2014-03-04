@@ -2,4 +2,8 @@
 
 mkdir -p $HOME/.drush
 mkdir -p $PHP_INI_SCAN_DIR
+
+# Symlink all PHP .ini files into the Pressflow 7 directory.
+ln -sfv /etc/php.d/* $PHP_INI_SCAN_DIR
+
 exit 0
